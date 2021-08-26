@@ -13,11 +13,11 @@ class Bridge {
 
     this.pointA = pointA;
     this.body = Composites.chain(rects, 0.1, 0, -0.6, 0, {
-      stiffness: 0.8,
+      stiffness: 3,
       length: 10,
       render: { type: "line" }
     });
-
+    this.image = loadImage("wood.png");
     World.add(engine.world, this.body);
 
     Composite.add(rects, [
@@ -44,6 +44,7 @@ class Bridge {
       {
         this.drawVertices(this.body.bodies[i].vertices);
       }
+      image(this.image,0,0,this.width,this.height)
     }
 
   }

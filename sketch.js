@@ -12,7 +12,6 @@ var stones=[];
 function preload()
 {
   bgImg  = loadImage("assets/background.png")
-  stoneImg = loadImage("assets/stone.png")
   woodImg = loadImage("assets/wood.png")
   zombieImg = loadImage("assets/zombie.png")
 }
@@ -23,11 +22,11 @@ function setup() {
   world = engine.world;
   frameRate(80);
 
-  ground = new Base(width/2,height-20,windowWidth,20)
-  flyover = new Bridge(20,{x:0,y:300});
-  leftBase = new Base(80,300,150,100);
-  rightBase = new Base(1270,300,150,100);
-  jointPoint = new Base(1270,300,150,100);
+  ground = new Base(0,height-10,width*2,20)
+  flyover = new Bridge(30,{x:50,y:height/2-140});
+  leftBase = new Base(80,height-300,200,height/2+100);
+  rightBase = new Base(width-100,height-300,200,height/2+100);
+  jointPoint = new Base(width-250,height/2-100,40,-20);
   Matter.Composite.add(flyover.body,jointPoint);
   fly_con = new Link(flyover,jointPoint);
   stone1 = new Stone(400,20,80,80);

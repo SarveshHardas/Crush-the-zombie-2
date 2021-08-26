@@ -21,8 +21,8 @@ class Stone
         fill(255,255,255)
         translate(pos.x,pos.y)
         rotate(angle)
-        rectMode(CENTER)
-        image(this.image,0,0,this.radius)
+        ellipseMode(RADIUS)
+        image(this.image,0,0,this.radius,this.radius)
         pop();
     }
 }
