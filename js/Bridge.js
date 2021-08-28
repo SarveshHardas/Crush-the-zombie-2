@@ -17,7 +17,7 @@ class Bridge {
       length: 10,
       render: { type: "line" }
     });
-    this.image = loadImage("wood.png");
+    this.image = loadImage("assets/wood.png");
     World.add(engine.world, this.body);
 
     Composite.add(rects, [

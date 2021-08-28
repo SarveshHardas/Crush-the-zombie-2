@@ -46,7 +46,7 @@ function setup() {
   button =createImg("assets/axe.png") 
   button.position(width-200,height/2-50)
   button.size(50,50);
-  button.mousePressed(handleButtonPress);
+  button.mouseClicked(handleButtonPress);
 
 }
 
@@ -67,12 +67,16 @@ function draw()
   var edges=createEdgeSprites();
   zombie.bounceOff(edges);
 
+  if(flyover!=null)
+  {
+    image(woodImg,flyover.x,flyover.y,10,10);
+  }
+
   drawSprites();
 }
 function handleButtonPress()
 {
+  flyover.break();
   fly_con.detach();
-  setTimeout(()=>{ 
-    flyover.break();
-  },1500)
+  fly_con=null;
 }
